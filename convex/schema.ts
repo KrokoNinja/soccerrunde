@@ -11,5 +11,5 @@ export default defineSchema({
     balance: v.float64(),
     name: v.string(),
     status: v.string(),
-  }),
+  }).index("by_name", ["name"]),
 });
