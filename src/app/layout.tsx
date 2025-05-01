@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import {
   ClerkProvider,
   SignInButton,
-  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -12,7 +11,7 @@ import './globals.css'
 import { ConvexClientProvider } from '@/components/ConvexClientProvider'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -38,15 +37,23 @@ export default function RootLayout({
       <ConvexClientProvider>
         <html lang="en" suppressHydrationWarning>
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <Link href="/dashboard" className={cn(buttonVariants())}>Dashboard</Link>
-                <UserButton />
-              </SignedIn>
+            <header className="flex justify-between items-center p-4 gap-4 h-16">
+              <Link href="/">
+                <h1 className="text-2xl">
+                  ⚽️
+                </h1>
+              </Link>
+              <div className="flex gap-4 items-center">
+                <SignedOut>
+                  <SignInButton>
+                    <Button>Login</Button>
+                  </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                  <Link href="/dashboard" className={cn(buttonVariants())}>Dashboard</Link>
+                  <UserButton />
+                </SignedIn>
+              </div>
             </header>
             {children}
           </body>

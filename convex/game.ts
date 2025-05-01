@@ -33,3 +33,10 @@ export const get_gameday_by_date = query({
     return await ctx.db.query("gameday").filter(q => q.eq(q.field("date"), args.date)).collect();
   },
 });
+
+export const get_next_gameday = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query("gameday").order("asc").filter(q => q.gt(q.field("date"), new Date().toISOString())).first();
+  },
+});
