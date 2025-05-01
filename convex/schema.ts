@@ -12,4 +12,8 @@ export default defineSchema({
     name: v.string(),
     status: v.string(),
   }).index("by_name", ["name"]),
+  gameday: defineTable({
+    date: v.string(),
+    players: v.optional(v.array(v.id("player"))),
+  }).index("by_date", ["date"]),
 });
