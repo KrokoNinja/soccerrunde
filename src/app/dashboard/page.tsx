@@ -1,8 +1,10 @@
 "use client"
-import CreateGameday from "@/components/CreateGameday";
+import CreateGameday from "@/app/dashboard/components/CreateGameday";
+import NextGameday from "@/components/NextGameday";
 export default function Dashboard() {
 
-  return <div className="p-4">
+  return <div className="flex flex-col gap-4">
+    <NextGameday />
     <CreateGameday />
   </div>
 }

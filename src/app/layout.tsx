@@ -37,7 +37,7 @@ export default function RootLayout({
       <ConvexClientProvider>
         <html lang="en" suppressHydrationWarning>
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="flex justify-between items-center p-4 gap-4 h-16">
+            <header className="flex justify-between items-center p-4 gap-4">
               <Link href="/">
                 <h1 className="text-2xl">
                   ⚽️
@@ -55,7 +55,9 @@ export default function RootLayout({
                 </SignedIn>
               </div>
             </header>
-            {children}
+            <div className="p-8 sm:px-12 sm:py-4">
+              {children}
+            </div>
           </body>
         </html>
       </ConvexClientProvider>

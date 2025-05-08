@@ -1,10 +1,10 @@
 "use client"
 import { useState } from "react";
-import Box from "./Box";
+import Box from "../../../components/Box";
 import DatePicker from "./DatePicker";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 export default function CreateGameday() {
 
 
