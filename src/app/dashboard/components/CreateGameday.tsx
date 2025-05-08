@@ -27,11 +27,11 @@ export default function CreateGameday() {
   }
 
 
-  return <Box className="w-fit">
+  return <Box className="w-full sm:w-fit">
     <h2 className="text-lg font-bold pb-2">Spieltag erstellen</h2>
     <form className="flex flex-col gap-2 items-start pb-2" onSubmit={handleSubmit}>
       <DatePicker date={date} setDate={setDate} />
-      <Button type="submit">Erstellen</Button>
+      <Button type="submit" className="w-full sm:w-fit">Erstellen</Button>
     </form>
     {error && <p className="text-red-500">{error}</p>}
   </Box>;

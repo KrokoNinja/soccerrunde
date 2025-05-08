@@ -6,7 +6,7 @@ export default function Dashboard() {
 
   return <div className="flex flex-col gap-4">
     <NextGameday />
-    <div className="flex gap-4">
+    <div className="flex gap-4 flex-col sm:flex-row">
       <CreateGameday />
       <PlayerBox />
     </div>
